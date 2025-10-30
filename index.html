@@ -1,38 +1,84 @@
 <!doctype html>
 
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dos imágenes lado a lado</title>
-    <style>
-        /* Contenedor para poner las imágenes en fila */
-        .imagenes-fila {
-            display: flex;
-            justify-content: flex-start; /* Alinea al inicio */
-            gap: 50px; /* Espacio entre imágenes */
-            margin-top: 50px;
-        }
-        .imagenes-fila img {
-            width: 600px; /* Tamaño de las imágenes */
-            height: auto;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="imagenes-fila">
-        <img src="https://i.pinimg.com/736x/8d/d5/88/8dd588f12f0e88648af8cfd3fd6873b6.jpg" alt=".">
-        <img src="https://i.pinimg.com/736x/cc/ce/ad/cccead3adb65eff31b0919c74b291c4c.jpg" alt=".">
-    </div>
-
-</body>
-</html>
-
+<!-- Portada tipo canal de YouTube (pegar antes del <div class="container">) -->
+<section class="portada">
+  <img src="https://www.sostenibilidad.com/content/dam/sostenibilidad/media/655439/poto.jpg" alt="Portada Renova" class="portada-img">
+  <div class="portada-texto">
+    <h1>Renova S.R.L</h1>
+    <p>Renova con estilo y vive con conciencia 🌿</p>
+  </div>
+</section>
   <title>Renova S.R.L — Página Oficial</title>
   <style>
-    :root{--accent:#2b8cff;--bg:#f7f8fb;--card:#ffffff;--muted:#6b7280}
+    /* Estilo de la portada con capa para legibilidad */
+.portada {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.portada-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Si la imagen es muy clara, bajamos el brillo; si es muy oscura, se mantiene legible */
+  filter: brightness(0.65);
+  transition: transform .6s ease;
+}
+
+/* efecto sutil al pasar el mouse (opcional) */
+.portada:hover .portada-img { transform: scale(1.03); }
+
+/* capa semitransparente detrás del texto para asegurar contraste */
+.portada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  pointer-events: none;
+}
+
+/* Caja del texto centrado */
+.portada-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  z-index: 2;
+  padding: 12px 18px;
+  border-radius: 8px;
+  /* fondo semi-transparente extra para máxima legibilidad */
+  background: rgba(0,0,0,0.20);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Tipografía */
+.portada-texto h1 {
+  font-size: 34px;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+.portada-texto p {
+  font-size: 16px;
+  margin: 6px 0 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.45);
+}
+
+/* Versión móvil */
+@media (max-width: 600px) {
+  .portada { height: 200px; }
+  .portada-texto h1 { font-size: 20px; }
+  .portada-texto p { font-size: 13px; }
+  .portada-texto { padding: 8px 12px; }
+}
+      :root{--accent:#2b8cff;--bg:#f7f8fb;--card:#ffffff;--muted:#6b7280}
     *{box-sizing:border-box}
     body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#111; margin:0}
     .container{max-width:1000px;margin:28px auto;padding:20px}
