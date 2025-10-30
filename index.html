@@ -1,191 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Renova - Macetas Ecológicas</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hib Hub — Página de presentación</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background-color: #f4f6f5;
-      color: #333;
-    }
-
-    header {
-      background-color: #2e7d32;
-      color: white;
-      padding: 20px 10%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 1.8em;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=60') center/cover no-repeat;
-      color: white;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 10%;
-    }
-
-    .hero h2 {
-      font-size: 2.5em;
-      max-width: 700px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 15px;
-    }
-
-    section {
-      padding: 60px 10%;
-    }
-
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .about img {
-      width: 400px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .about-text {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .about-text h2 {
-      color: #2e7d32;
-      margin-bottom: 15px;
-    }
-
-    .products {
-      text-align: center;
-    }
-
-    .products h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-
-    .product-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .product {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 15px;
-    }
-
-    footer {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer p {
-      font-size: 0.9em;
-    }
+    :root{--accent:#2b8cff;--bg:#f7f8fb;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#111; margin:0}
+    .container{max-width:1000px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:84px;height:84px;border-radius:12px;overflow:hidden;background:#ddd;display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{font-size:24px;margin:0}
+    p.lead{color:var(--muted);margin-top:6px}
+    .hero{margin-top:18px;background:linear-gradient(180deg, rgba(43,140,255,0.06), transparent);padding:18px;border-radius:12px}
+    .grid{display:grid;grid-template-columns:1fr 300px;gap:18px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    .socials{display:flex;flex-direction:column;gap:8px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:white}
+    .contact{font-weight:700;font-size:18px}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:14px}
+    .icons{display:flex;gap:8px}
+    .icons a{padding:8px;border-radius:8px;text-decoration:none;border:1px solid rgba(16,24,40,0.04);display:inline-flex;align-items:center;gap:8px}
+    /* responsive */
+    @media (max-width:880px){.grid{grid-template-columns:1fr}.gallery img{height:140px}}
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Renova</h1>
-    <nav>
-      <a href="#about">Nosotros</a>
-      <a href="#products">Productos</a>
-      <a href="#contact">Contacto</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>Damos nueva vida al plástico creando macetas sostenibles para un mundo más verde</h2>
-  </section>
-
-  <section id="about" class="about">
-    <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=500&q=60" alt="Macetas recicladas">
-    <div class="about-text">
-      <h2>Sobre Renova</h2>
-      <p>En <strong>Renova</strong> transformamos plástico reciclado en macetas únicas y ecológicas. Nuestro objetivo es reducir el impacto ambiental y promover el diseño sostenible. Cada una de nuestras macetas no solo embellece tu hogar, sino que también ayuda a reducir los residuos plásticos que contaminan el planeta.</p>
-      <p>Creemos en la economía circular y en dar una segunda oportunidad a los materiales, creando productos duraderos, coloridos y 100% reciclados.</p>
-    </div>
-  </section>
-
-  <section id="products" class="products">
-    <h2>Nuestros Productos</h2>
-    <div class="product-list">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1604933738055-7c5e94abbdde?auto=format&fit=crop&w=500&q=60" alt="Maceta ecológica">
-        <h3>Maceta Clásica</h3>
-        <p>Diseño tradicional hecho con plástico 100% reciclado. Ideal para interiores o exteriores.</p>
+  <div class="container">
+    <header>
+      <div class="logo">Hib<br/>Hub</div>
+      <div>
+        <h1>Hib Hub — Nombre del Proyecto / Empresa</h1>
+        <p class="lead">Breve descripción: lo que hace tu proyecto o negocio en 1-2 líneas.</p>
       </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1606813902911-9b11b88715b2?auto=format&fit=crop&w=500&q=60" alt="Maceta colorida">
-        <h3>Maceta Color Eco</h3>
-        <p>Fabricada con materiales reciclados y tintes naturales. Alegre y resistente.</p>
+    </header><section class="hero">
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>Galería</h2>
+        <p style="color:var(--muted)">Fotos que me enviarás — reemplace los archivos en la carpeta <code>/images/</code> con los nombres indicados.</p>
+        <div class="gallery">
+          <img src="images/photo1.jpg" alt="Foto 1" />
+          <img src="images/photo2.jpg" alt="Foto 2" />
+          <img src="images/photo3.jpg" alt="Foto 3" />
+          <img src="images/photo4.jpg" alt="Foto 4" />
+        </div>
       </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1582582494700-1ded8f58c633?auto=format&fit=crop&w=500&q=60" alt="Maceta moderna">
-        <h3>Maceta Moderna</h3>
-        <p>Estilo minimalista y moderno, creada para combinar sostenibilidad y elegancia.</p>
+
+      <div style="height:16px"></div>
+
+      <div class="card">
+        <h2>Sobre nosotros</h2>
+        <p>Escribe aquí un párrafo explicando la misión, valores o servicios. Por ejemplo: "En Hib Hub reciclamos y diseñamos macetas ecológicas hechas de plástico reutilizado, con un enfoque en diseño vintage y sostenibilidad."</p>
       </div>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2 style="color:#2e7d32; text-align:center;">Contáctanos</h2>
-    <p style="text-align:center; max-width:600px; margin:20px auto;">
-      Si querés saber más sobre nuestros productos o realizar un pedido, escribinos a:  
-      <strong>renova.eco@gmail.com</strong>  
-      o visitanos en nuestras redes sociales.
-    </p>
-  </section>
+    <aside>
+      <div class="card">
+        <h3>Contacto</h3>
+        <p class="contact">Tel: +54 9 11 1234 5678</p>
+        <p style="color:var(--muted);margin-top:6px">(Número de contacto ficticio; cámbialo si quieres uno real)</p>
 
-  <footer>
-    <p>© 2025 Renova S.R.L. | Hecho con materiales reciclados 🌿</p>
-  </footer>
+        <div style="height:8px"></div>
+        <h3>Redes sociales</h3>
+        <div class="socials">
+          <a class="btn btn-primary" href="https://facebook.com/tu-pagina" target="_blank">Facebook</a>
+          <a class="btn" href="https://instagram.com/tu-cuenta" target="_blank">Instagram</a>
+          <a class="btn" href="https://tiktok.com/@tu-cuenta" target="_blank">TikTok</a>
+          <a class="btn" href="https://wa.me/5491112345678" target="_blank">WhatsApp (link)</a>
+        </div>
 
+        <div style="height:12px"></div>
+        <h3>Ubicación</h3>
+        <p style="color:var(--muted)">Salta, Argentina (si quieres otro lugar, cámbialo aquí)</p>
+      </div>
+
+      <div style="height:12px"></div>
+
+      <div class="card">
+        <h3>Acciones rápidas</h3>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+          <a class="btn" href="#gallery">Ver galería</a>
+          <a class="btn" href="#contact">Enviar mensaje</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer>
+  <div class="icons">
+    <a href="#">Términos</a>
+    <a href="#">Privacidad</a>
+  </div>
+  <div style="margin-top:10px">© Hib Hub — Página generada automáticamente</div>
+</footer>
+
+  </div>
 </body>
 </html>
